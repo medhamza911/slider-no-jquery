@@ -1,0 +1,59 @@
+.slider {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  perspective: 1000px; }
+  .slider:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 5;
+    content: " "; }
+  .slider .arrowLeft, .slider .arrowRight {
+    width: 44px;
+    background-size: contain;
+    position: absolute;
+    top: calc(50% - 77px);
+    z-index: 20;
+    cursor: pointer;
+    color: #fff; }
+    .slider .arrowLeft svg, .slider .arrowRight svg {
+      width: 44px; }
+  .slider .arrowLeft {
+    left: 0;
+    transform: rotate(180deg); }
+  .slider .arrowRight {
+    right: 0; }
+  .slider .slide {
+    width: 100%;
+    background-size: cover !important;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    transition: 1s all;
+    transform: translateY(-100%) rotateX(90deg) ; }
+    .slider .slide.active ~ .slide {
+      transform: translateY(100%) rotateX(-90deg) ; }
+    .slider .slide:last-child {
+      transform: translateY(-100%) rotateX(90deg) !important; }
+    .slider .slide.active + .slide:last-child {
+      transform: translateY(100%) rotateX(-90deg) !important; }
+    .slider .slide.loopback {
+      transform: translateY(100%) rotateX(-90deg) ; }
+    .slider .slide.active {
+      z-index: 10;
+      transform: translateY(0%) rotateX(0deg) !important; }
+
+.slider .slide:nth-child(3) {
+  background: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?cs=srgb&dl=abstract-background-blur-255379.jpg&fm=jpg) no-repeat; }
+
+.slider .slide:nth-child(4) {
+  background: url(https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat; }
+
+.slider .slide:nth-child(5) {
+  background: url(https://images.pexels.com/photos/207171/pexels-photo-207171.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat; }
+
+.slider .slide:nth-child(6) {
+  background: url(https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat; }
